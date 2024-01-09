@@ -1,0 +1,16 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { Link } from "~/components/Link.tsx";
+---
+
+<Layout title="Not Found">
+  <div class="absolute left-0 top-0 m-4">
+    <Link client:load href="/">Back Home</Link>
+  </div>
+  <div class="container mx-auto flex h-screen place-items-center justify-center px-2">
+    <div class="text-center">
+      <h1 class="mb-4 border-b-2 border-fuchsia-600 pb-1 text-4xl font-bold">Not Found</h1>
+      <h2 class="text-2xl">Could not find any pages that match this address</h2>
+    </div>
+  </div>
+</Layout>

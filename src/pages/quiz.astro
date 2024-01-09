@@ -1,0 +1,20 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { Link } from "~/components/Link.tsx";
+import QuizPage from "~/components/quiz/QuizPage.tsx";
+---
+
+<Layout title="Violin Finger Patterns Quiz">
+  <div class="container mx-auto px-2 font-serif">
+    <header class="mb-4 mt-12 flex w-full justify-center sm:mt-8">
+      <h1 class="border-b-2 border-fuchsia-600 px-2 pb-1 text-xl font-bold sm:text-3xl">Finger Patterns Quiz</h1>
+    </header>
+    <div class="mx-auto max-w-4xl">
+      <QuizPage client:load />
+    </div>
+  </div>
+  <div class="absolute left-0 top-0 m-4">
+    <Link client:load href="/">Back Home</Link>
+  </div>
+</Layout>
+~/components/quiz/QuizPage~/components/quiz/QuizPage

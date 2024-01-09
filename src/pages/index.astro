@@ -1,0 +1,12 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import IndexPage from "~/components/pages/IndexPage.tsx";
+// TODO: visual consistency
+// inprove visual consistency of titles and links. links shoudl have fuchsia underline/border, non-links should have black underline/border.
+// there should also be an indication that you can change scales by clicking on the title of a scale page
+// TODO: add better og images/tags using my og api
+---
+
+<Layout title="Violin Finger Patterns and Scales">
+  <IndexPage client:load />
+</Layout>

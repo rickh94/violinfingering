@@ -1,0 +1,19 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { Link } from "~/components/Link";
+import scales from "~/common/scales";
+---
+
+<Layout title="Violin Scales">
+  <div class="container mx-auto px-2 font-serif">
+    <header class="mb-4 mt-8 flex w-full justify-center">
+      <h1 class="border-b-2 border-fuchsia-600 px-2 pb-1 text-xl font-bold sm:text-3xl">Choose a Scale</h1>
+    </header>
+    <div class="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-y-6 text-center">
+      {scales.map(scale => <Link href={`/scales/${scale.key}/${scale.mode}`}>{scale.name}</Link>)}
+    </div>
+  </div>
+  <div class="absolute left-0 top-0 m-4">
+    <Link href="/">Back Home</Link>
+  </div>
+</Layout>
