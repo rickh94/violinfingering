@@ -1,4 +1,4 @@
-import generateQuiz, { QuizMode, type QuizSettings, type QuestionInfo } from './common';
+import generateQuiz, { QuizMode, type QuizSettings, type QuestionInfo } from "./common";
 
 type QuizSplashProps = {
   setMode: (mode: QuizMode) => void;

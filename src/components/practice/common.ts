@@ -123,7 +123,7 @@ function numToViolinString(num: any) {
  */
 
 export function createShareLink(configs: SingleExerciseConfig[]) {
-  const encodedConfigObjects = configs.map(config => [
+  const encodedConfigObjects = configs.map((config) => [
     violinStringToNum(config.violinString),
     patternToNum(config.pattern),
     posToNum(config.position),
@@ -144,7 +144,7 @@ export function decodeShareLink(): SingleExerciseConfig[] {
   if (!(encodedConfigObjects instanceof Array)) {
     throw new Error(`invalid config: ${encodedConfigObjects}`);
   }
-  return encodedConfigObjects.map(config => {
+  return encodedConfigObjects.map((config) => {
     if (!(config instanceof Array) || config.length !== 5) {
       throw new Error(`invalid config: ${config}`);
     }

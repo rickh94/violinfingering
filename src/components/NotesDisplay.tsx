@@ -130,5 +130,5 @@ export default function NotesDisplay(props: NotesDisplayProps) {
     nextNote.classList.add("abcjs-note_selected");
   });
 
-  return <div class="notes -pl-2 h-[7rem] overflow-x-scroll" id={notesId()}></div>;
+  return <div class="notes -pl-2 min-h-[7.5rem] overflow-y-visible overflow-x-scroll" id={notesId()}></div>;
 }

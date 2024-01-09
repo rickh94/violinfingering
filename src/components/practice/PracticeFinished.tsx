@@ -1,6 +1,6 @@
-import { patterns } from '~/common/patterns';
-import { type SingleExerciseConfig } from './common';
-import { For } from 'solid-js';
+import { patterns } from "~/common/patterns";
+import { type SingleExerciseConfig } from "./common";
+import { For } from "solid-js";
 
 type PracticeFinishedProps = {
   restart: () => void;
@@ -33,19 +33,19 @@ export default function PracticeFinished(props: PracticeFinishedProps) {
       <h3 class="text-xl font-bold">Patterns Practiced</h3>
       <ul class="flex list-none flex-col gap-2">
         <For each={props.exerciseConfigs}>
-          {exercise => (
+          {(exercise) => (
             <li class="flex items-center justify-between gap-x-6 rounded bg-white px-4 py-2 shadow">
               <div class="flex min-w-0 gap-x-4">
                 <div class="min-w-0 flex-auto">
                   <p class="wrap-balance leading-6 text-gray-900">
                     <strong class="text-pretty font-sans font-bold not-italic text-fuchsia-700">
                       {patterns.normal[exercise.pattern]?.name}
-                    </strong>{' '}
-                    on the{' '}
+                    </strong>{" "}
+                    on the{" "}
                     <strong class="text-pretty font-sans font-bold not-italic text-fuchsia-700">
                       {exercise.violinString} String
-                    </strong>{' '}
-                    in the{' '}
+                    </strong>{" "}
+                    in the{" "}
                     <strong class="text-pretty font-sans font-bold not-italic text-fuchsia-700">
                       {exercise.position} position
                     </strong>

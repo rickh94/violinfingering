@@ -51,7 +51,7 @@ export const ScalePicker: Component<{ text: string; isHeading?: boolean }> = fun
                     class="block w-full rounded-md border border-gray-300 py-2 pl-3 text-base focus:border-fuchsia-500 focus:outline-none focus:ring-fuchsia-500 focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-white sm:text-sm"
                   >
                     <For each={TABS}>
-                      {tab => (
+                      {(tab) => (
                         <option
                           value={tab.id}
                           selected={currentTabId() === tab.id}
@@ -67,7 +67,7 @@ export const ScalePicker: Component<{ text: string; isHeading?: boolean }> = fun
                   <div class="border-b border-gray-200">
                     <div class="-mb-px flex gap-x-4" aria-label="Tabs">
                       <For each={TABS}>
-                        {tab => (
+                        {(tab) => (
                           <button
                             onClick={() => setCurrentTabId(tab.id)}
                             class="whitespace-nowrap border-b-2 px-1 py-2 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
@@ -118,7 +118,7 @@ const MajorScales: Component = function () {
 function MinorScales() {
   return (
     <For each={scales}>
-      {scale => <>{scale.mode == "minor" && <Link href={`/scales/${scale.key}/${scale.mode}`}>{scale.name}</Link>}</>}
+      {(scale) => <>{scale.mode == "minor" && <Link href={`/scales/${scale.key}/${scale.mode}`}>{scale.name}</Link>}</>}
     </For>
   );
 }
@@ -126,7 +126,9 @@ function MinorScales() {
 function MelodicScales() {
   return (
     <For each={scales}>
-      {scale => <>{scale.mode == "melodic" && <Link href={`/scales/${scale.key}/${scale.mode}`}>{scale.name}</Link>}</>}
+      {(scale) => (
+        <>{scale.mode == "melodic" && <Link href={`/scales/${scale.key}/${scale.mode}`}>{scale.name}</Link>}</>
+      )}
     </For>
   );
 }

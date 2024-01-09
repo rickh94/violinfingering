@@ -22,10 +22,10 @@ export default function PracticeDisplay(props: PracticeDisplayProps) {
   }
   return (
     <Show when={!!props.currExercise && !!props.currExerciseConfig} fallback={<p>Something went wrong</p>}>
-      <div class="my-4 flex w-full items-center justify-center">
+      <div class="my-4 flex w-full gap-4">
         <div class="rounded-lg bg-white px-4 py-2 shadow-sm shadow-fuchsia-500/20">
-          <h2 class="text-xl">
-            <span class="font-bold transition-all duration-200">{props.currExerciseConfig.violinString} String</span> —{" "}
+          <h2 class="mb-4 sm:text-xl">
+            <strong class="font-bold">{props.currExerciseConfig.violinString} String</strong> —{" "}
             <em class="italic text-fuchsia-700">{patterns.normal[props.currExerciseConfig.pattern]?.name}</em>
           </h2>
           <FingerDisplay
@@ -34,6 +34,24 @@ export default function PracticeDisplay(props: PracticeDisplayProps) {
               patterns[props.currExerciseConfig.position][props.currExerciseConfig.pattern]?.widths ?? [4, 4, 4, 4]
             }
             disabled={true}
+          />
+        </div>
+        <div class="hidden flex-grow rounded-lg bg-white px-4 py-2 shadow-sm shadow-fuchsia-500/20 sm:block">
+          <h3 class="text-xl font-bold">Practice Method</h3>
+          <p class="text-sm">Play through normally, or try using the sevcik rhythms on each measure.</p>
+          <NotesDisplay
+            notes={`L:1/16
+(A4 B4 c4 B4) | (A2B2c2B2 A2B2c2B2) |
+(ABcB ABcB ABcB ABcB) |]`}
+            offset={0}
+            disabled={true}
+            wrap={{
+              minSpacing: 1.4,
+              maxSpacing: 3,
+              preferredMeasuresPerLine: 2,
+            }}
+            responsive="resize"
+            staffwidth={540}
           />
         </div>
       </div>

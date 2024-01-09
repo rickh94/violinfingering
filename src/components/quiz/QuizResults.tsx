@@ -1,7 +1,7 @@
 // TODO: make the loading feedback a little prettier, maybe its own component
 
-import { createSignal, onMount } from 'solid-js';
-import generateQuiz, { QuizMode, type QuizResultsInfo, type QuizSettings, type QuestionInfo } from './common';
+import { createSignal, onMount } from "solid-js";
+import generateQuiz, { QuizMode, type QuizResultsInfo, type QuizSettings, type QuestionInfo } from "./common";
 
 type QuizResultsProps = {
   setMode: (mode: QuizMode) => void;
@@ -13,18 +13,18 @@ type QuizResultsProps = {
 
 export default function QuizResults(props: QuizResultsProps) {
   const [percentage, setPercentage] = createSignal(0);
-  const [colorClass, setColorClass] = createSignal('');
+  const [colorClass, setColorClass] = createSignal("");
   // const [message, setMessage] = createSignal('Loading Feedback...');
 
   onMount(() => {
     const nextPercentage = (props.results.correct / props.quizSettings.numOfQuestions) * 100;
     setPercentage(nextPercentage);
     if (nextPercentage >= 79.9) {
-      setColorClass('text-emerald-500');
+      setColorClass("text-emerald-500");
     } else if (nextPercentage >= 49.9) {
-      setColorClass('text-amber-500');
+      setColorClass("text-amber-500");
     } else {
-      setColorClass('text-rose-500');
+      setColorClass("text-rose-500");
     }
     /*
     fetch("/api/feedback", {
@@ -57,11 +57,11 @@ export default function QuizResults(props: QuizResultsProps) {
 
   function itemColorClass(mistakes: number) {
     if (mistakes > 2) {
-      return 'text-rose-500';
+      return "text-rose-500";
     } else if (mistakes > 0) {
-      return 'text-amber-500';
+      return "text-amber-500";
     } else {
-      return 'text-emerald-500';
+      return "text-emerald-500";
     }
   }
 

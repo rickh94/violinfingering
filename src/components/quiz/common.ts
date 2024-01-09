@@ -2,7 +2,7 @@ import type { PatternId, PatternPosition, ViolinString } from "~/common/patterns
 
 export default function generateQuiz(quizSettings: QuizSettings): QuestionInfo[] {
   const questionPool: QuestionInfo[] = allPossibleQuestions.filter(
-    q =>
+    (q) =>
       quizSettings.strings.includes(q.violinString) &&
       quizSettings.patterns.includes(q.patternId) &&
       q.difficulty <= quizSettings.difficulty,

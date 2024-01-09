@@ -15,7 +15,7 @@ export default defineConfig({
     tailwind(),
     solidJs(),
     sitemap({
-      filter: page => page !== "https://violinfingering.com/all-the-patterns/all-of-them/",
+      filter: (page) => page !== "https://violinfingering.com/all-the-patterns/all-of-them/",
     }),
   ],
   output: "static",

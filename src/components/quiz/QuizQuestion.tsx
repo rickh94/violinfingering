@@ -70,7 +70,7 @@ ${shuffle(props.question.notes.split(" ")).join(" ")} |]`;
           <Switch>
             <Match when={props.question.patternPosition === "low"}>
               <For each={Object.keys(patterns.low)}>
-                {key => {
+                {(key) => {
                   if (
                     key !== "oneTwo" &&
                     key !== "twoThree" &&
@@ -106,7 +106,7 @@ ${shuffle(props.question.notes.split(" ")).join(" ")} |]`;
             </Match>
             <Match when={props.question.patternPosition === "normal"}>
               <For each={Object.keys(patterns.normal)}>
-                {key => {
+                {(key) => {
                   if (
                     key !== "oneTwo" &&
                     key !== "twoThree" &&
@@ -142,7 +142,7 @@ ${shuffle(props.question.notes.split(" ")).join(" ")} |]`;
             </Match>
             <Match when={props.question.patternPosition === "high"}>
               <For each={Object.keys(patterns.high)}>
-                {key => {
+                {(key) => {
                   if (
                     key !== "oneTwo" &&
                     key !== "twoThree" &&

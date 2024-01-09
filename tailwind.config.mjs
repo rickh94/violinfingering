@@ -1,12 +1,12 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-import iconify from '@iconify/tailwind';
+import defaultTheme from "tailwindcss/defaultTheme";
+import iconify from "@iconify/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     screens: {
-      xs: '475px',
+      xs: "475px",
       ...defaultTheme.screens,
     },
     extend: {},
@@ -14,7 +14,7 @@ export default {
   plugins: [
     iconify.addDynamicIconSelectors({
       iconSets: {
-        custom: './custom-icons.json',
+        custom: "./custom-icons.json",
       },
     }),
   ],

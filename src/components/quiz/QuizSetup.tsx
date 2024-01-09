@@ -1,9 +1,9 @@
-import { Show, createSignal } from 'solid-js';
-import { QuizMode, type QuestionInfo, type QuizSettings, quizDefaults } from './common';
-import generateQuiz from './common';
-import RadioBox from '~/components/RadioBox';
-import type { SetStoreFunction } from 'solid-js/store';
-import ListCheckBox from '../ListCheckBox';
+import { Show, createSignal } from "solid-js";
+import { QuizMode, type QuestionInfo, type QuizSettings, quizDefaults } from "./common";
+import generateQuiz from "./common";
+import RadioBox from "~/components/RadioBox";
+import type { SetStoreFunction } from "solid-js/store";
+import ListCheckBox from "../ListCheckBox";
 
 // TODO: fix num of questions load
 type QuizSetupProps = {
@@ -19,13 +19,13 @@ export default function QuizSetup(props: QuizSetupProps) {
   const [error, setError] = createSignal<string | null>(null);
   function validateQuizSettings() {
     if (props.quizSettings.numOfQuestions < 5) {
-      return 'Number of Questions must be at least 5';
+      return "Number of Questions must be at least 5";
     }
     if (props.quizSettings.strings.length === 0) {
-      return 'You must select at least one string';
+      return "You must select at least one string";
     }
     if (props.quizSettings.patterns.length === 0) {
-      return 'You must select at least one pattern';
+      return "You must select at least one pattern";
     }
     return null;
   }
@@ -47,7 +47,7 @@ export default function QuizSetup(props: QuizSetupProps) {
   return (
     <form
       action="#"
-      onSubmit={e => {
+      onSubmit={(e) => {
         e.preventDefault();
         submitQuizSettings();
       }}
@@ -64,7 +64,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="numOfQuestions5"
               name="numOfQuestions"
               checked={props.quizSettings.numOfQuestions === 5}
-              setChecked={() => props.setQuizSettings('numOfQuestions', 5)}
+              setChecked={() => props.setQuizSettings("numOfQuestions", 5)}
             />
             <RadioBox
               value={10}
@@ -72,7 +72,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="numOfQuestions10"
               name="numOfQuestions"
               checked={props.quizSettings.numOfQuestions === 10}
-              setChecked={() => props.setQuizSettings('numOfQuestions', 10)}
+              setChecked={() => props.setQuizSettings("numOfQuestions", 10)}
             />
             <RadioBox
               value={15}
@@ -80,7 +80,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="numOfQuestions15"
               name="numOfQuestions"
               checked={props.quizSettings.numOfQuestions === 15}
-              setChecked={() => props.setQuizSettings('numOfQuestions', 15)}
+              setChecked={() => props.setQuizSettings("numOfQuestions", 15)}
             />
             <RadioBox
               value={20}
@@ -88,7 +88,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="numOfQuestions20"
               name="numOfQuestions"
               checked={props.quizSettings.numOfQuestions === 20}
-              setChecked={() => props.setQuizSettings('numOfQuestions', 20)}
+              setChecked={() => props.setQuizSettings("numOfQuestions", 20)}
             />
             <RadioBox
               value={25}
@@ -96,7 +96,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="numOfQuestions25"
               name="numOfQuestions"
               checked={props.quizSettings.numOfQuestions === 25}
-              setChecked={() => props.setQuizSettings('numOfQuestions', 25)}
+              setChecked={() => props.setQuizSettings("numOfQuestions", 25)}
             />
             <RadioBox
               value={30}
@@ -104,7 +104,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="numOfQuestions30"
               name="numOfQuestions"
               checked={props.quizSettings.numOfQuestions === 30}
-              setChecked={() => props.setQuizSettings('numOfQuestions', 30)}
+              setChecked={() => props.setQuizSettings("numOfQuestions", 30)}
             />
           </div>
         </fieldset>
@@ -114,40 +114,40 @@ export default function QuizSetup(props: QuizSetupProps) {
             <ListCheckBox
               text="E String"
               key="e-string"
-              isChecked={props.quizSettings.strings.includes('E')}
+              isChecked={props.quizSettings.strings.includes("E")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('strings', strings =>
-                  isChecked ? [...strings, 'E'] : strings.filter(s => s !== 'E'),
+                props.setQuizSettings("strings", (strings) =>
+                  isChecked ? [...strings, "E"] : strings.filter((s) => s !== "E"),
                 )
               }
             />
             <ListCheckBox
               text="A String"
               key="a-string"
-              isChecked={props.quizSettings.strings.includes('A')}
+              isChecked={props.quizSettings.strings.includes("A")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('strings', strings =>
-                  isChecked ? [...strings, 'A'] : strings.filter(s => s !== 'A'),
+                props.setQuizSettings("strings", (strings) =>
+                  isChecked ? [...strings, "A"] : strings.filter((s) => s !== "A"),
                 )
               }
             />
             <ListCheckBox
               text="D String"
               key="d-string"
-              isChecked={props.quizSettings.strings.includes('D')}
+              isChecked={props.quizSettings.strings.includes("D")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('strings', strings =>
-                  isChecked ? [...strings, 'D'] : strings.filter(s => s !== 'D'),
+                props.setQuizSettings("strings", (strings) =>
+                  isChecked ? [...strings, "D"] : strings.filter((s) => s !== "D"),
                 )
               }
             />
             <ListCheckBox
               text="G String"
               key="g-string"
-              isChecked={props.quizSettings.strings.includes('G')}
+              isChecked={props.quizSettings.strings.includes("G")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('strings', strings =>
-                  isChecked ? [...strings, 'G'] : strings.filter(s => s !== 'G'),
+                props.setQuizSettings("strings", (strings) =>
+                  isChecked ? [...strings, "G"] : strings.filter((s) => s !== "G"),
                 )
               }
             />
@@ -159,50 +159,50 @@ export default function QuizSetup(props: QuizSetupProps) {
             <ListCheckBox
               text="1-2 Pattern"
               key="one-two-pattern"
-              isChecked={props.quizSettings.patterns.includes('oneTwo')}
+              isChecked={props.quizSettings.patterns.includes("oneTwo")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('patterns', patterns =>
-                  isChecked ? [...patterns, 'oneTwo'] : patterns.filter(p => p !== 'oneTwo'),
+                props.setQuizSettings("patterns", (patterns) =>
+                  isChecked ? [...patterns, "oneTwo"] : patterns.filter((p) => p !== "oneTwo"),
                 )
               }
             />
             <ListCheckBox
               text="2-3 Pattern"
               key="two-three-pattern"
-              isChecked={props.quizSettings.patterns.includes('twoThree')}
+              isChecked={props.quizSettings.patterns.includes("twoThree")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('patterns', patterns =>
-                  isChecked ? [...patterns, 'twoThree'] : patterns.filter(p => p !== 'twoThree'),
+                props.setQuizSettings("patterns", (patterns) =>
+                  isChecked ? [...patterns, "twoThree"] : patterns.filter((p) => p !== "twoThree"),
                 )
               }
             />
             <ListCheckBox
               text="3-4 Pattern"
               key="three-four-pattern"
-              isChecked={props.quizSettings.patterns.includes('threeFour')}
+              isChecked={props.quizSettings.patterns.includes("threeFour")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('patterns', patterns =>
-                  isChecked ? [...patterns, 'threeFour'] : patterns.filter(p => p !== 'threeFour'),
+                props.setQuizSettings("patterns", (patterns) =>
+                  isChecked ? [...patterns, "threeFour"] : patterns.filter((p) => p !== "threeFour"),
                 )
               }
             />
             <ListCheckBox
               text="Whole Steps Pattern"
               key="whole-steps-pattern"
-              isChecked={props.quizSettings.patterns.includes('wholeSteps')}
+              isChecked={props.quizSettings.patterns.includes("wholeSteps")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('patterns', patterns =>
-                  isChecked ? [...patterns, 'wholeSteps'] : patterns.filter(p => p !== 'wholeSteps'),
+                props.setQuizSettings("patterns", (patterns) =>
+                  isChecked ? [...patterns, "wholeSteps"] : patterns.filter((p) => p !== "wholeSteps"),
                 )
               }
             />
             <ListCheckBox
               text="Half Steps Pattern"
               key="half-steps-pattern"
-              isChecked={props.quizSettings.patterns.includes('halfSteps')}
+              isChecked={props.quizSettings.patterns.includes("halfSteps")}
               setIsChecked={(isChecked: boolean) =>
-                props.setQuizSettings('patterns', patterns =>
-                  isChecked ? [...patterns, 'halfSteps'] : patterns.filter(p => p !== 'halfSteps'),
+                props.setQuizSettings("patterns", (patterns) =>
+                  isChecked ? [...patterns, "halfSteps"] : patterns.filter((p) => p !== "halfSteps"),
                 )
               }
             />
@@ -219,7 +219,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="ascending"
               name="order"
               checked={props.quizSettings.inOrder}
-              setChecked={() => props.setQuizSettings('inOrder', true)}
+              setChecked={() => props.setQuizSettings("inOrder", true)}
             />
             <RadioBox
               value="false"
@@ -227,7 +227,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="random"
               name="order"
               checked={!props.quizSettings.inOrder}
-              setChecked={() => props.setQuizSettings('inOrder', false)}
+              setChecked={() => props.setQuizSettings("inOrder", false)}
             />
           </div>
         </fieldset>
@@ -240,7 +240,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="difficulty1"
               name="difficulty"
               checked={props.quizSettings.difficulty === 1}
-              setChecked={() => props.setQuizSettings('difficulty', 1)}
+              setChecked={() => props.setQuizSettings("difficulty", 1)}
             />
             <RadioBox
               value={2}
@@ -248,7 +248,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="difficulty2"
               name="difficulty"
               checked={props.quizSettings.difficulty === 2}
-              setChecked={() => props.setQuizSettings('difficulty', 2)}
+              setChecked={() => props.setQuizSettings("difficulty", 2)}
             />
             <RadioBox
               value={3}
@@ -256,7 +256,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="difficulty3"
               name="difficulty"
               checked={props.quizSettings.difficulty === 3}
-              setChecked={() => props.setQuizSettings('difficulty', 3)}
+              setChecked={() => props.setQuizSettings("difficulty", 3)}
             />
             <RadioBox
               value={4}
@@ -264,7 +264,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="difficulty4"
               name="difficulty"
               checked={props.quizSettings.difficulty === 4}
-              setChecked={() => props.setQuizSettings('difficulty', 4)}
+              setChecked={() => props.setQuizSettings("difficulty", 4)}
             />
             <RadioBox
               value={5}
@@ -272,7 +272,7 @@ export default function QuizSetup(props: QuizSetupProps) {
               key="difficulty5"
               name="difficulty"
               checked={props.quizSettings.difficulty === 5}
-              setChecked={() => props.setQuizSettings('difficulty', 5)}
+              setChecked={() => props.setQuizSettings("difficulty", 5)}
             />
           </div>
         </fieldset>

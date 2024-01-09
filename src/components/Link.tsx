@@ -14,9 +14,7 @@ export const Link: Component<{
       target={props.external ? "_blank" : undefined}
       rel={props.external ? "noreferrer noopener" : undefined}
     >
-      <span class="border-b-2 border-fuchsia-600 hover:text-fuchsia-800">
-        {props.children}
-      </span>
+      <span class="border-b-2 border-fuchsia-600 hover:text-fuchsia-800">{props.children}</span>
     </a>
   );
 };

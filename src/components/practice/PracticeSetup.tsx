@@ -9,6 +9,7 @@ import { patterns } from "~/common/patterns";
 import { ExerciseForm } from "./ExerciseForm";
 import { createAutoAnimate } from "@formkit/auto-animate/solid";
 import "./practice.css";
+import scales from "~/common/scales";
 
 type PracticeSetupProps = {
   startPracticing: (exerciseConfigs: SingleExerciseConfig[]) => void;
@@ -25,14 +26,14 @@ export default function PracticeSetup(props: PracticeSetupProps) {
   function addExerciseConfig(exercise: SingleExerciseConfig) {
     exercise.id = Math.floor(Math.random() * 1000000);
     setLink("");
-    setExerciseConfigs(configs => [...configs, exercise]);
+    setExerciseConfigs((configs) => [...configs, exercise]);
   }
 
   function deleteExerciseConfig(deleteId: number | undefined) {
     if (deleteId === undefined) {
       return;
     }
-    setExerciseConfigs(configs => configs.filter((ex: SingleExerciseConfig) => ex.id !== deleteId));
+    setExerciseConfigs((configs) => configs.filter((ex: SingleExerciseConfig) => ex.id !== deleteId));
     setLink("");
   }
 
@@ -87,7 +88,7 @@ export default function PracticeSetup(props: PracticeSetupProps) {
           <h2 class="text-2xl font-bold">Exercises</h2>
           <ul class="my-2 flex flex-col gap-2" ref={parent}>
             <For each={exerciseConfigs()}>
-              {exercise => (
+              {(exercise) => (
                 <ExerciseConfigItem exercise={exercise} onDelete={() => deleteExerciseConfig(exercise.id)} />
               )}
             </For>

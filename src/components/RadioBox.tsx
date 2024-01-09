@@ -14,8 +14,8 @@ export default function RadioBox(props: RadioBoxProps) {
       for={id()}
       class="relative flex cursor-pointer items-center justify-center rounded-lg border bg-white p-3 shadow-sm focus:outline-none"
       classList={{
-        'border-fuchsia-700 ring-2 ring-fuchsia-700': props.checked,
-        'border-pink-100': !props.checked,
+        "border-fuchsia-700 ring-2 ring-fuchsia-700": props.checked,
+        "border-pink-100": !props.checked,
       }}
     >
       <input
@@ -25,7 +25,7 @@ export default function RadioBox(props: RadioBoxProps) {
         value={props.value}
         class="sr-only"
         checked={props.checked}
-        onChange={e => e.currentTarget.checked && props.setChecked()}
+        onChange={(e) => e.currentTarget.checked && props.setChecked()}
         aria-labelledby={`${id}-label`}
       />
       <span class="flex flex-1">
@@ -44,8 +44,8 @@ export default function RadioBox(props: RadioBoxProps) {
       <span
         class="pointer-events-none absolute -inset-px rounded-lg border-2"
         classList={{
-          'border-fuchsial-700': props.checked,
-          'border-pink-100': !props.checked,
+          "border-fuchsial-700": props.checked,
+          "border-pink-100": !props.checked,
         }}
         aria-hidden="true"
       />
