@@ -13,15 +13,15 @@ export const PatternCard: Component<{
     <Dialog.Root>
       <Dialog.Trigger
         type="button"
-        class="group relative flex cursor-pointer flex-col items-center justify-center rounded-lg shadow-fuchsia-900/20 bg-white px-4 py-4 shadow-sm focus-within:ring-2 focus-within:ring-fuchsia-500 hover:shadow-fuchsia-500 hover:shadow hover:border-transparent focus:border-fuchsia-500 focus:outline-none focus:ring-2 focus-visible:ring-fuchsia-500"
+        class="group relative flex cursor-pointer flex-col items-center justify-center rounded-lg bg-white px-4 py-4 shadow-sm shadow-fuchsia-900/20 focus-within:ring-2 focus-within:ring-fuchsia-500 hover:border-transparent hover:shadow hover:shadow-fuchsia-500 focus:border-fuchsia-500 focus:outline-none focus:ring-2 focus-visible:ring-fuchsia-500"
       >
         <div class="flex w-full justify-between">
           <h2 class="text-left text-xl tracking-wide">{props.pattern.name}</h2>
         </div>
-        <div class="invisible absolute right-0 top-0 mr-2 mt-2 text-right text-base tracking-wide text-fuchsia-700 group-hover:visible group-focus:visible">
+        <div class="invisible absolute right-0 top-0 mr-4 mt-3 text-right text-base tracking-wide text-fuchsia-700 group-hover:visible group-focus:visible">
           More Info
         </div>
-        <FingerDisplay baseId={props.patternId} radius={2} widths={props.pattern.widths} />
+        <FingerDisplay radius={2} widths={props.pattern.widths} />
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop class="overlay fixed inset-0 z-20 bg-fuchsia-200 bg-opacity-60 backdrop-blur" />
@@ -40,23 +40,18 @@ export const PatternCard: Component<{
                   class="relative z-50 mx-auto mt-4 flex w-full flex-col items-center justify-center gap-2 text-left"
                   aria-label="primary"
                 >
-                  <FingerDisplay
-                    baseId={`${props.patternId}-pattern-more-info`}
-                    radius={2}
-                    widths={props.pattern.widths}
-                  />
-
+                  <FingerDisplay radius={2} widths={props.pattern.widths} />
                   <div class="flex w-full items-center justify-center pb-8">
                     <Link href={`/practice?patternId=${props.patternId}`} class="text-xl">
                       Practice Now
                     </Link>
                   </div>
-                  <For each={props.pattern.description}>{desc => <p>{desc}</p>}</For>
+                  <For each={props.pattern.description}>{(desc) => <p>{desc}</p>}</For>
                   <Show when={props.pattern.exercises && props.pattern.exercises?.length > 0}>
                     <h4 class="text-xl font-bold">Exercises</h4>
                     <ul>
                       <For each={props.pattern.exercises}>
-                        {ex => (
+                        {(ex) => (
                           <li class="mb-1">
                             <Link href={ex.link} external>
                               {ex.name}

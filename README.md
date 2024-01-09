@@ -1,47 +1,33 @@
-# Astro Starter Kit: Minimal
+# Finger Patterns with Quiz
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A web app for helping violin students learn their finger patterns.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Basic Capabilities
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+\[x\] Outputs all first position finger patterns for a given key as name and chart
+\[x\] shows scale for key
+\[x\] shows exercise for practicing finger patterns (sevcik/schradiek)
+\[ \] Outputs finger patterns for a set of notes on a string (validates note set)
+\[ \] all basic finger patterns
+\[ \] possible edge cases
 
-## 🚀 Project Structure
+## Practice Quiz
 
-Inside of your Astro project, you'll see the following folders and files:
+\[x\] Show a set of notes for a string and student selects finger pattern from multiple choice names/chart
+\[ \] Show a key signature and student picks finger patterns per string
+\[x\] offers some configuration
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Practice aid
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+\[ \] students can save finger patterns with a piece
+\[ \] basic finger patterns for starting key
+\[ \] record changes at key change
+\[ \] record accidentals
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## BUGS
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- incorrect pattern in F minor on the d string
+- consider preventing repeated notes except across barlines
+- prevent open strings in some flat keys
+- some half step patterns only have a hole step not augmented (f minor)
+- center buttons on practice great job screen

@@ -5,19 +5,19 @@ import { ScalePicker } from "~/components/ScalePicker";
 import ScalePage from "~/components/pages/ScalePage";
 import Layout from "~/layouts/Layout.astro";
 export function getStaticPaths() {
-  return scales.map(scale => ({
+  return scales.map((scale) => ({
     params: { key: scale.key, mode: scale.mode },
   }));
 }
 
 const { mode, key } = Astro.params;
-const thisScale = scales.find(scale => scale.key === key && scale.mode === mode);
+const thisScale = scales.find((scale) => scale.key === key && scale.mode === mode);
 if (!thisScale || !thisScale.notes || !thisScale.key) {
   return Astro.redirect("/404");
 }
 ---
 
-<Layout title={thisScale.name}>
+<Layout title={`${thisScale.name} Scale | Violin Finger Patterns`}>
   <main class="container mx-auto px-2 font-serif">
     <header class="mb-4 mt-12 flex w-full justify-center sm:mt-8">
       <ScalePicker isHeading={true} text={`${thisScale.name} Scale`} client:load />

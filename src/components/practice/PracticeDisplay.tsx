@@ -22,35 +22,35 @@ export default function PracticeDisplay(props: PracticeDisplayProps) {
   }
   return (
     <Show when={!!props.currExercise && !!props.currExerciseConfig} fallback={<p>Something went wrong</p>}>
-      <h2 class="text-lg leading-6 text-gray-900">
-        Practicing the{" "}
-        <strong class="font-sans font-bold text-fuchsia-700">
-          {patterns.normal[props.currExerciseConfig.pattern]?.name}
-        </strong>{" "}
-        on the{" "}
-        <strong class="font-sans font-bold text-fuchsia-700">{props.currExerciseConfig.violinString} String</strong> in
-        the <strong class="font-sans font-bold text-fuchsia-700">{props.currExerciseConfig.position} position</strong>{" "}
-        for {props.currExerciseConfig.numOfMeasures} measures
-      </h2>
-      <div class="flex w-full items-center justify-center">
-        <FingerDisplay
-          radius={2}
-          widths={patterns[props.currExerciseConfig.position][props.currExerciseConfig.pattern]?.widths ?? [4, 4, 4, 4]}
+      <div class="my-4 flex w-full items-center justify-center">
+        <div class="rounded-lg bg-white px-4 py-2 shadow-sm shadow-fuchsia-500/20">
+          <h2 class="text-xl">
+            <span class="font-bold transition-all duration-200">{props.currExerciseConfig.violinString} String</span> —{" "}
+            <em class="italic text-fuchsia-700">{patterns.normal[props.currExerciseConfig.pattern]?.name}</em>
+          </h2>
+          <FingerDisplay
+            radius={2}
+            widths={
+              patterns[props.currExerciseConfig.position][props.currExerciseConfig.pattern]?.widths ?? [4, 4, 4, 4]
+            }
+            disabled={true}
+          />
+        </div>
+      </div>
+      <div class="w-full rounded-lg bg-white p-2 shadow shadow-black/20 md:p-4">
+        <NotesDisplay
+          notes={props.currExercise ?? ""}
+          offset={0}
           disabled={true}
+          wrap={{
+            minSpacing: 1.4,
+            maxSpacing: 2.7,
+            preferredMeasuresPerLine: 4,
+          }}
+          responsive="resize"
+          staffwidth={720}
         />
       </div>
-      <NotesDisplay
-        notes={props.currExercise ?? ""}
-        offset={0}
-        disabled={true}
-        wrap={{
-          minSpacing: 1.4,
-          maxSpacing: 2.7,
-          preferredMeasuresPerLine: 4,
-        }}
-        responsive="resize"
-        staffwidth={720}
-      />
       <div class="mt-4 flex w-full items-center justify-between gap-x-2">
         {props.hasPrevExercise ? (
           <button

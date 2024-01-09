@@ -9,7 +9,6 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-// const imageUrl = new URL(`${canonicalUrl}/og.png`, Astro.site);
 const defaultDescription = "Practice violin finger patterns with interactive diagrams, scales, exercises, and a quiz.";
 import "../base.css";
 ---
@@ -38,13 +37,13 @@ import "../base.css";
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description ?? defaultDescription} />
     <meta property="og:url" content={canonicalUrl} />
-    <!-- <meta property="og:image" content={imageUrl} /> -->
+    <meta property="og:image" content="https://og.rickhenry.dev/fingerpatterns/opengraph-image" />
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta property="twitter:description" content={description ?? defaultDescription} />
-    <!-- <meta name="twitter:image" content={imageUrl} /> -->
+    <meta property="twitter:image" content="https://og.rickhenry.dev/fingerpatterns/opengraph-image" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
     <ViewTransitions />

@@ -123,7 +123,11 @@ export default function NotesDisplay(props: NotesDisplayProps) {
     for (const el of document.querySelectorAll(`#${notesId()} .abcjs-note_selected`)) {
       el.classList.remove("abcjs-note_selected");
     }
-    document.querySelector(`#${notesId()} .abcjs-n${noteNumber}`)?.classList.add("abcjs-note_selected");
+    const nextNote = document.querySelector(`#${notesId()} .abcjs-n${noteNumber}`);
+    if (!nextNote) {
+      return;
+    }
+    nextNote.classList.add("abcjs-note_selected");
   });
 
   return <div class="notes -pl-2 h-[7rem] overflow-x-scroll" id={notesId()}></div>;

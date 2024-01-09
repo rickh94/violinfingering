@@ -35,11 +35,11 @@ export default function About() {
           </ul>
           <p>
             If you're finding this useful, I'd love to hear from you! Especially if you have any problems or find any
-            mistakes or issues. You can
+            mistakes or issues. You can{" "}
             <Link external href="https://rickhenry.studio/contact">
               use the contact form
             </Link>{" "}
-            on my
+            on my{" "}
             <Link external href="https://rickhenry.studio/">
               personal website.
             </Link>
