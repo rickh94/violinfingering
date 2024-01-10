@@ -6,7 +6,7 @@ import { createSignal } from "solid-js";
 export default function Nav() {
   const [open, setOpen] = createSignal(false);
   return (
-    <div class="fixed right-0 top-0 z-10 mr-4 mt-2">
+    <div class="absolute right-0 top-0 z-10 mr-4 mt-2">
       <Menu.Root open={open()} onOpenChange={(e) => setOpen(e.open)}>
         <Menu.Trigger
           class="flex gap-1 rounded-lg bg-white p-2 text-black focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-700 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
