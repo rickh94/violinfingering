@@ -9,7 +9,6 @@ import { patterns } from "~/common/patterns";
 import { ExerciseForm } from "./ExerciseForm";
 import { createAutoAnimate } from "@formkit/auto-animate/solid";
 import "./practice.css";
-import scales from "~/common/scales";
 
 type PracticeSetupProps = {
   startPracticing: (exerciseConfigs: SingleExerciseConfig[]) => void;
@@ -85,7 +84,9 @@ export default function PracticeSetup(props: PracticeSetupProps) {
       <div class="flex flex-col gap-4 sm:mx-auto sm:max-w-4xl">
         <ExerciseForm save={addExerciseConfig} />
         <div class="min-h-[32rem] pb-12 md:col-span-2">
-          <h2 class="text-2xl font-bold">Exercises</h2>
+          <Show when={exerciseConfigs().length > 0}>
+            <h2 class="text-2xl font-bold">Exercises</h2>
+          </Show>
           <ul class="my-2 flex flex-col gap-2" ref={parent}>
             <For each={exerciseConfigs()}>
               {(exercise) => (

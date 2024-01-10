@@ -13,12 +13,12 @@ export const PatternCard: Component<{
     <Dialog.Root>
       <Dialog.Trigger
         type="button"
-        class="group relative flex cursor-pointer flex-col items-center justify-center rounded-lg bg-white px-4 py-4 shadow-sm shadow-fuchsia-900/20 focus-within:ring-2 focus-within:ring-fuchsia-500 hover:border-transparent hover:shadow hover:shadow-fuchsia-500 focus:border-fuchsia-500 focus:outline-none focus:ring-2 focus-visible:ring-fuchsia-500"
+        class="group relative flex cursor-pointer flex-col items-center justify-center rounded-lg bg-white px-4 py-4 shadow-sm shadow-black/20 transition-all duration-150 ease-in focus-within:ring-2 focus-within:ring-fuchsia-500 hover:border-transparent hover:shadow hover:shadow-fuchsia-500 focus:border-fuchsia-500 focus:outline-none focus:ring-2 focus-visible:ring-fuchsia-500"
       >
         <div class="flex w-full justify-between">
           <h2 class="text-left text-xl tracking-wide">{props.pattern.name}</h2>
         </div>
-        <div class="invisible absolute right-0 top-0 mr-4 mt-3 text-right text-base tracking-wide text-fuchsia-700 group-hover:visible group-focus:visible">
+        <div class="absolute right-0 top-0 mr-4 mt-3 text-right text-base tracking-wide text-fuchsia-700 opacity-0 transition duration-150 ease-in group-hover:opacity-100 group-focus:opacity-100">
           More Info
         </div>
         <FingerDisplay radius={2} widths={props.pattern.widths} />

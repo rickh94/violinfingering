@@ -39,20 +39,22 @@ export default function PracticeDisplay(props: PracticeDisplayProps) {
         <div class="hidden flex-grow rounded-lg bg-white px-4 py-2 shadow-sm shadow-fuchsia-500/20 sm:block">
           <h3 class="text-xl font-bold">Practice Method</h3>
           <p class="text-sm">Play through normally, or try using the sevcik rhythms on each measure.</p>
-          <NotesDisplay
-            notes={`L:1/16
+          <div class="max-w-md">
+            <NotesDisplay
+              notes={`L:1/16
 (A4 B4 c4 B4) | (A2B2c2B2 A2B2c2B2) |
 (ABcB ABcB ABcB ABcB) |]`}
-            offset={0}
-            disabled={true}
-            wrap={{
-              minSpacing: 1.4,
-              maxSpacing: 3,
-              preferredMeasuresPerLine: 2,
-            }}
-            responsive="resize"
-            staffwidth={540}
-          />
+              offset={0}
+              disabled={true}
+              wrap={{
+                minSpacing: 1.4,
+                maxSpacing: 3,
+                preferredMeasuresPerLine: 2,
+              }}
+              responsive="resize"
+              staffwidth={480}
+            />
+          </div>
         </div>
       </div>
       <div class="w-full rounded-lg bg-white p-2 shadow shadow-black/20 md:p-4">
