@@ -385,8 +385,8 @@ function GenerateRandomDialog(props: { save: (config: SingleExerciseConfig) => v
 
   return (
     <Dialog.Root open={open()} onOpenChange={(e) => setOpen(e.open)}>
-      <Dialog.Trigger class="flex items-center gap-2 rounded-lg border border-fuchsia-700 bg-white px-4 py-1 font-sans text-xl font-semibold shadow-sm shadow-black/20 transition duration-200  hover:shadow hover:shadow-fuchsia-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-700 focus-visible:ring-offset-1 focus-visible:ring-offset-white">
-        {/* TODO: icon */}
+      <Dialog.Trigger class="flex items-center gap-2 rounded-lg border border-fuchsia-700 bg-white px-4 py-2 font-sans text-xl font-semibold shadow-sm shadow-black/20 transition duration-200  hover:shadow hover:shadow-fuchsia-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-700 focus-visible:ring-offset-1 focus-visible:ring-offset-white">
+        <span class="icon-[heroicons--arrow-path-solid] -ml-1 size-6"></span>
         Generate Random Exercises
       </Dialog.Trigger>
       <Portal>
@@ -491,11 +491,14 @@ function GenerateRandomDialog(props: { save: (config: SingleExerciseConfig) => v
                     </fieldset>
                     <div class="mt-4 flex w-full flex-row-reverse justify-start gap-x-2">
                       <button type="submit" class="btn bg-fuchsia-600 text-white hover:bg-fuchsia-500">
-                        {/* TODO: change icon */}
-                        <span class="icon-[heroicons--plus-solid] -ml-1 size-5"></span>
+                        <span class="icon-[heroicons--arrow-path-solid] -ml-1 size-5"></span>
                         Generate
                       </button>
-                      <button type="reset" class="btn bg-rose-600 text-white hover:bg-rose-500">
+                      <button
+                        type="button"
+                        onClick={() => setOpen(false)}
+                        class="btn bg-rose-600 text-white hover:bg-rose-500"
+                      >
                         <span class="icon-[heroicons--x-mark-solid] -ml-1 size-5"></span>
                         Close
                       </button>
