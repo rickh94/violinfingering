@@ -30,9 +30,15 @@
     src: url("/fonts/libre-baskerville-v14-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
+  html {
+    overscroll-behavior-y: none;
+  }
+
   body {
-    @apply min-h-dvh bg-gradient-to-br from-fuchsia-50 to-white bg-cover antialiased;
     overscroll-behavior: none;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
   }
 
   * {

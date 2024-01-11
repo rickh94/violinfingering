@@ -104,10 +104,10 @@ export default function NotesDisplay(props: NotesDisplayProps) {
       scale: 1.1,
       add_classes: true,
       clickListener: onNoteClick,
-      paddingleft: 0,
-      paddingright: 0,
-      paddingbottom: 0,
-      paddingtop: 0,
+      paddingleft: 2,
+      paddingright: 2,
+      paddingbottom: 8,
+      paddingtop: 2,
       wrap: props.wrap,
       staffwidth: props.staffwidth,
       responsive: props.responsive,
@@ -130,5 +130,5 @@ export default function NotesDisplay(props: NotesDisplayProps) {
     nextNote.classList.add("abcjs-note_selected");
   });
 
-  return <div class="notes -pl-2 min-h-[7.5rem] overflow-y-visible overflow-x-scroll" id={notesId()}></div>;
+  return <div class="notes -pl-2" id={notesId()}></div>;
 }
