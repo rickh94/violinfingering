@@ -60,7 +60,7 @@ export const patterns: PatternList = {
       name: "3-4 Pattern",
       widths: [4, 16, 16, 4],
       position: "low",
-      id: "twoThree",
+      id: "threeFour",
     },
     wholeSteps: {
       name: "Whole Steps Pattern",
